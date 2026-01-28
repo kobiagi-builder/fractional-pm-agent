@@ -1,0 +1,37 @@
+# Customer data - NEVER commit actual customer information
+customers/*/
+!customers/.template/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Node (if dependencies added later)
+node_modules/
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Sensitive exports
+*.pdf
+*.xlsx
+*.csv
