@@ -26,12 +26,19 @@ We use a **hybrid architecture** that separates concerns by complexity and auton
 ├─────────────────────────────────────────────────────────────────┤
 │  SKILLS (Lightweight, Inline)          │  CAPABILITIES (Expert, │
 │  • build-agent                         │   Autonomous)          │
-│  • load-customer-context               │  • user-interviews     │
-│  • update-customer-docs                │  • data-analyst        │
-│                                        │  • competition-research│
-│  Quick tasks, <1 min                   │  • prioritization      │
-│  Run inline in conversation            │  • flow-designer       │
-│  Internal operations                   │  • ux-ui-designer      │
+│  • load-customer-context               │                        │
+│  • update-customer-docs                │  PM Work Capabilities: │
+│                                        │  • user-interviews     │
+│  Quick tasks, <1 min                   │  • data-analyst        │
+│  Run inline in conversation            │  • competition-research│
+│  Internal operations                   │  • prioritization      │
+│                                        │  • flow-designer       │
+│                                        │  • ux-ui-designer      │
+│                                        │                        │
+│                                        │  Practice Capabilities:│
+│                                        │  • sales-advisor       │
+│                                        │  • marketing-advisor   │
+│                                        │  • relationship-advisor│
 │                                        │                        │
 │                                        │  Deep work, 1+ min     │
 │                                        │  Run autonomously      │
@@ -67,12 +74,15 @@ fractional_pm_agent/
 │   │   ├── load-customer-context/  # Load customer files into memory
 │   │   └── update-customer-docs/   # Update customer documentation
 │   └── capabilities/               # Expert sub-agents
-│       ├── user-interviews-analyst/
+│       ├── user-interviews-analyst/  # PM Work
 │       ├── data-analyst/
 │       ├── competition-researcher/
 │       ├── prioritization-analyst/
 │       ├── flow-designer/
-│       └── ux-ui-designer/
+│       ├── ux-ui-designer/
+│       ├── sales-advisor/            # Practice Development
+│       ├── marketing-advisor/
+│       └── relationship-advisor/
 └── customers/
     ├── .template/                  # Template for new customers
     └── [customer-name]/            # Customer-specific folders
@@ -94,6 +104,9 @@ fractional_pm_agent/
 
 ### Capabilities (Expert Sub-Agents)
 
+#### PM Work Capabilities
+Help deliver work FOR customers:
+
 | Capability | Expertise |
 |------------|-----------|
 | **user-interviews-analyst** | Interview design, facilitation, thematic analysis, persona building |
@@ -102,6 +115,15 @@ fractional_pm_agent/
 | **prioritization-analyst** | RICE framework, opportunity scoring, roadmap planning |
 | **flow-designer** | User flows, journey maps, service blueprints |
 | **ux-ui-designer** | Wireframes, interaction specs, design systems |
+
+#### Practice Development Capabilities
+Help grow the fractional PM practice:
+
+| Capability | Expertise |
+|------------|-----------|
+| **sales-advisor** | Lead qualification, proposal development, objection handling, closing strategy |
+| **marketing-advisor** | Personal branding, content strategy, lead generation, thought leadership |
+| **relationship-advisor** | Account health, difficult conversations, renewals, boundary setting |
 
 ## Rules (Always Active)
 
