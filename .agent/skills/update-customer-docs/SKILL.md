@@ -39,6 +39,8 @@ Review the interaction/conversation to identify:
 - [ ] Challenge/priority changes → customer-info.md
 - [ ] Financial updates → financials.md
 - [ ] Events/meetings → event-log.md
+- [ ] Ideas/opportunities → ideas.md
+- [ ] Action items → action-items.md
 - [ ] Artifacts created → artifacts/
 
 ### Step 3: Read Current Files
@@ -46,6 +48,8 @@ Load the current state of files that need updating:
 - Read customer-info.md (if info changes)
 - Read financials.md (if financial changes)
 - Read event-log.md (for new entries)
+- Read ideas.md (for new ideas)
+- Read action-items.md (for action item updates)
 - List artifacts/ (to avoid duplicates)
 
 ### Step 4: Prepare Updates
@@ -66,6 +70,22 @@ Load the current state of files that need updating:
 - Use standard event format (see below)
 - Include ALL required fields
 
+**For ideas.md:**
+- Create new idea entry at TOP of ideas section
+- Use standard idea format (see below)
+- Include ALL required fields
+- Update the "Ideas by Status" summary table
+
+**For action-items.md:**
+- Create new action items in appropriate status section (Open)
+- Use standard action item format (see below)
+- Assign unique ID (AI-XXX, incrementing from Next Available ID)
+- Update existing items when progress is made or status changes
+- Move items between sections when status changes
+- Update Summary Dashboard counts and tables
+- Link action items to source event in event-log.md
+- Update "Next Available ID" after adding new items
+
 **For artifacts/:**
 - Determine appropriate filename: `[topic]-[date].md` or `[topic]-v[N].md`
 - Use clear, searchable names
@@ -80,6 +100,8 @@ Report what was updated:
 Updated [Customer]'s documentation:
 - customer-info.md: [what changed]
 - event-log.md: Added [event type] entry for [date]
+- ideas.md: Added idea "[idea title]"
+- action-items.md: Added [AI-XXX] "[title]" / Updated [AI-XXX] status to [status]
 - artifacts/: Created [filename]
 ```
 
@@ -113,6 +135,102 @@ Updated [Customer]'s documentation:
 
 ---
 ```
+
+## Idea Entry Format
+
+```markdown
+### [YYYY-MM-DD] [Idea Title]
+
+**Status**: [New / Under Consideration / Approved / Rejected / Implemented / Parked]
+
+**Description**:
+[Clear description of the idea - what is it and what problem does it solve?]
+
+**References**:
+- [Link, article, conversation, or source that inspired this idea]
+- [Related internal documents or artifacts]
+
+**Pros**:
+- [Benefit 1]
+- [Benefit 2]
+- [Benefit 3]
+
+**Cons**:
+- [Drawback 1]
+- [Drawback 2]
+- [Drawback 3]
+
+**Risks**:
+- [Risk 1 with potential impact]
+- [Risk 2 with potential impact]
+
+**Right Timing**:
+[When is the right time to pursue this? What conditions need to be true? What dependencies exist?]
+
+**Action Items**:
+- [ ] [Next step to explore or validate this idea] - Owner: [Name] - Due: [Date]
+
+---
+```
+
+## Action Item Entry Format
+
+```markdown
+### [AI-XXX] [Action Item Title]
+
+**Status**: [Open / In Progress / Blocked / Completed / Cancelled]
+**Priority**: [Critical / High / Medium / Low]
+**Owner**: [Name]
+**Created**: [YYYY-MM-DD]
+**Due**: [YYYY-MM-DD]
+**Completed**: [YYYY-MM-DD or -]
+
+**Source**: [Link to event-log entry or meeting that created this item]
+
+**Description**:
+[Clear description of what needs to be done]
+
+**Acceptance Criteria**:
+- [ ] [Criterion 1]
+- [ ] [Criterion 2]
+- [ ] [Criterion 3]
+
+**Dependencies**:
+- [Dependency 1 - status]
+- [Dependency 2 - status]
+
+**Progress Notes**:
+| Date | Update |
+|------|--------|
+| [YYYY-MM-DD] | [Progress update] |
+
+**Blockers** (if any):
+- [Blocker description and what's needed to unblock]
+
+**Outcome** (when completed):
+[What was delivered? Any follow-up items created?]
+
+---
+```
+
+### Action Item Statuses
+
+| Status | Meaning |
+|--------|---------|
+| `Open` | Not yet started |
+| `In Progress` | Actively being worked on |
+| `Blocked` | Cannot proceed - dependency or issue |
+| `Completed` | Done and verified |
+| `Cancelled` | No longer needed |
+
+### Action Item Priorities
+
+| Priority | Response Time |
+|----------|---------------|
+| `Critical` | Same day |
+| `High` | Within 2-3 days |
+| `Medium` | Within 1 week |
+| `Low` | When possible |
 
 ## Artifact File Format
 
@@ -154,12 +272,14 @@ Updated [Customer]'s documentation:
 - New information about the customer
 - Changes to priorities or strategy
 - Meeting/event metadata
+- Ideas and opportunities mentioned
 
 **Capture when significant:**
 - Discussion points that inform future work
 - Stakeholder sentiment or concerns
 - Blockers or risks identified
 - Dependencies discovered
+- Potential opportunities or improvements discussed
 
 ### How to Write
 

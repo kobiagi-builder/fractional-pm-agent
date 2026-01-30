@@ -71,7 +71,19 @@ Read these files in order:
    - Open action items
    - Recent decisions
 
-4. **artifacts/** (list)
+4. **ideas.md**
+   - Active ideas (Under Consideration, Approved)
+   - Recently added ideas
+   - Parked ideas worth noting
+
+5. **action-items.md**
+   - Open action items
+   - In Progress items
+   - Blocked items (highlight these!)
+   - Overdue items (highlight these!)
+   - Recently completed items
+
+6. **artifacts/** (list)
    - Available artifacts
    - Recent/active artifacts
 
@@ -106,9 +118,24 @@ Create a structured summary for working memory:
 - [Date]: [Event summary]
 - [Date]: [Event summary]
 
-### Open Action Items
-- [ ] [Action] - Due: [Date]
-- [ ] [Action] - Due: [Date]
+### Action Items Summary
+**Open**: [count] | **In Progress**: [count] | **Blocked**: [count] | **Overdue**: [count]
+
+#### Overdue (URGENT)
+- [AI-XXX] [Title] - Due: [Date] - [Days] overdue
+
+#### Blocked (ATTENTION)
+- [AI-XXX] [Title] - Blocker: [reason]
+
+#### In Progress
+- [AI-XXX] [Title] - Due: [Date] - Owner: [Name]
+
+#### Open (Next Up)
+- [AI-XXX] [Title] - Due: [Date] - Priority: [Priority]
+
+### Active Ideas
+- [Idea title] - [Status] - [Date]
+- [Idea title] - [Status] - [Date]
 
 ### Available Artifacts
 - [artifact-name.md] - [Type] - [Date]

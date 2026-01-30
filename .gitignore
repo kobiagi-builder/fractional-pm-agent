@@ -2,6 +2,9 @@
 customers/*/
 !customers/.template/
 
+# Personal growth data - NEVER commit
+growth/
+
 # Environment files
 .env
 .env.local

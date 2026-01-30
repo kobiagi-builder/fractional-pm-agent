@@ -47,7 +47,27 @@ Update when:
 - Problem escalations
 - Wins and celebrations
 
-### 4. artifacts/
+### 4. ideas.md
+**ALWAYS** add an entry for:
+- New ideas or opportunities mentioned
+- Potential improvements suggested
+- "What if" discussions
+- Future possibilities discussed
+- Brainstorming sessions
+- Market opportunities identified
+- Product enhancement suggestions
+
+### 5. action-items.md
+**ALWAYS** update when:
+- New action items are assigned (add to Open section)
+- Progress is made on an item (update Progress Notes)
+- Status changes (move between sections)
+- Items are blocked (add blocker details)
+- Items are completed (move to Completed, add outcome)
+- Items are cancelled (move to Cancelled with reason)
+- Due dates change (update and note in Progress Notes)
+
+### 6. artifacts/
 Create or update when:
 - Any analysis is performed
 - Any design is created
@@ -86,6 +106,111 @@ Every event MUST include:
 **Consequences/Follow-up**:
 [What happens next as a result of this event?]
 ```
+
+## Idea Entry Format
+
+Every idea MUST include:
+
+```markdown
+### [YYYY-MM-DD] [Idea Title]
+
+**Status**: [New / Under Consideration / Approved / Rejected / Implemented / Parked]
+
+**Description**:
+[Clear description of the idea - what is it and what problem does it solve?]
+
+**References**:
+- [Link, article, conversation, or source that inspired this idea]
+- [Related internal documents or artifacts]
+
+**Pros**:
+- [Benefit 1]
+- [Benefit 2]
+- [Benefit 3]
+
+**Cons**:
+- [Drawback 1]
+- [Drawback 2]
+- [Drawback 3]
+
+**Risks**:
+- [Risk 1 with potential impact]
+- [Risk 2 with potential impact]
+
+**Right Timing**:
+[When is the right time to pursue this? What conditions need to be true? What dependencies exist?]
+
+**Action Items**:
+- [ ] [Next step to explore or validate this idea] - Owner: [Name] - Due: [Date]
+
+---
+```
+
+## Idea Statuses
+
+Use consistent status labels:
+- `New` - Just captured, not yet evaluated
+- `Under Consideration` - Being actively discussed or researched
+- `Approved` - Decision made to pursue
+- `Rejected` - Decision made not to pursue (keep for reference)
+- `Implemented` - Idea has been executed
+- `Parked` - Good idea but not the right time
+
+## Action Item Entry Format
+
+Every action item MUST include:
+
+```markdown
+### [AI-XXX] [Action Item Title]
+
+**Status**: [Open / In Progress / Blocked / Completed / Cancelled]
+**Priority**: [Critical / High / Medium / Low]
+**Owner**: [Name]
+**Created**: [YYYY-MM-DD]
+**Due**: [YYYY-MM-DD]
+**Completed**: [YYYY-MM-DD or -]
+
+**Source**: [Link to event-log entry that created this item]
+
+**Description**:
+[Clear description of what needs to be done]
+
+**Acceptance Criteria**:
+- [ ] [Criterion 1]
+- [ ] [Criterion 2]
+
+**Dependencies**:
+- [Dependency 1 - status]
+
+**Progress Notes**:
+| Date | Update |
+|------|--------|
+| [YYYY-MM-DD] | [Progress update] |
+
+**Blockers** (if any):
+- [Blocker description]
+
+**Outcome** (when completed):
+[What was delivered?]
+
+---
+```
+
+## Action Item Statuses
+
+Use consistent status labels:
+- `Open` - Not yet started
+- `In Progress` - Actively being worked on
+- `Blocked` - Cannot proceed - dependency or issue
+- `Completed` - Done and verified
+- `Cancelled` - No longer needed
+
+## Action Item Priorities
+
+- `Critical` - Same day response required
+- `High` - Within 2-3 days
+- `Medium` - Within 1 week
+- `Low` - When possible, no urgency
 
 ## Event Types
 
@@ -129,6 +254,9 @@ Example confirmation:
 > "I've updated [Customer]'s documentation:
 > - Added stakeholder notes to customer-info.md
 > - Logged today's meeting in event-log.md
+> - Added new idea "Mobile-first redesign" to ideas.md
+> - Added action items AI-005, AI-006 to action-items.md
+> - Updated AI-003 status to Completed in action-items.md
 > - Saved the prioritization analysis to artifacts/prioritization-q2-2025.md"
 
 ## Anti-Patterns (NEVER DO)
@@ -146,8 +274,11 @@ Before considering documentation complete, verify:
 
 - [ ] All new information is captured in customer-info.md
 - [ ] Event log entry has all required fields filled
+- [ ] Any ideas mentioned are captured in ideas.md with full template
+- [ ] All action items added to action-items.md with unique IDs
+- [ ] Action item statuses updated for any progress discussed
+- [ ] Summary Dashboard in action-items.md is current
 - [ ] Any artifacts created are saved with descriptive names
-- [ ] Action items have owners and due dates
 - [ ] Financial updates (if any) are recorded
 - [ ] Dates are accurate (YYYY-MM-DD format)
 
