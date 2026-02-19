@@ -30,12 +30,28 @@ customers/
         └── ...
 ```
 
+## Context Sharing
+
+### Back Channel (File-Based Context)
+Content is shared via files, NOT chat messages. The `shared/` folder is the primary back channel:
+
+```
+shared/
+└── [drop files here for the agent to read]
+```
+
+- **Chat** = conversation (questions, feedback, decisions, direction)
+- **Files** = content (blog posts, drafts, articles, research, documents)
+
+When the user references content, READ it from the file system. Never ask them to paste it into chat. See `.agent/rules/shared-context-loading.md` for the full rule.
+
 ## Architecture
 
 ### Rules (Behavior Enforcement)
 Located in `.agent/rules/` - Always-active behavioral constraints:
 - `customer-context-loading.md` - MUST load customer folder before customer work
 - `obsessive-documentation.md` - MUST update customer files after every interaction
+- `shared-context-loading.md` - MUST read content from files, not chat. Chat is for conversation only
 
 ### Skills (Lightweight Internal Operations)
 Located in `.agent/skills/` - Inline execution for frequent tasks:

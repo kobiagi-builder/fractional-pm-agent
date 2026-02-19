@@ -51,6 +51,25 @@ Use this capability when:
 - Engagement tactics
 - Performance tracking
 
+### Phase 4a: Content Quality Gate (MANDATORY before publishing)
+
+**All content is written to files, not chat.** Drafts go to `shared/drafts/`. Chat only gets summaries. See `.agent/rules/shared-context-loading.md`.
+
+**Step 1: Humanization** - Invoke the `humanizer` skill on the draft file:
+- Read draft from `shared/drafts/[topic-slug].md`
+- Run humanizer to remove AI patterns: em dashes, rule of three, AI vocabulary ("delve", "navigate", "landscape", "leverage"), inflated language, vague attributions, excessive conjunctives
+- Save humanized version back to file
+- Content should read like a human wrote it on their phone
+
+**Step 2: Image Sourcing** (BLOCKING - no image = cannot publish):
+- **Reference article post**: Use Playwright to navigate to the article URL and screenshot the lead image. Save to `shared/images/[topic-slug]-lead.png`
+- **Original content**: Describe a visual for the user to create, or find a royalty-free image
+- **Framework/how-to**: Create a text diagram or describe the visual
+- Document image in the content entry: `**Post Image**: [file path or description]`
+- A post CANNOT move to "Ready for Review" without an image
+
+**Step 3: Verify** both humanizer and image are done before allowing status change
+
 ### Phase 5: Optimization
 - Analyze results
 - Refine approach

@@ -47,9 +47,11 @@ Use this capability when:
 ## Workflow
 
 ### Phase 1: Data Collection
+- Load growth events log (`growth/events.md`) - **READ THIS FIRST** for session history and current state
 - Load existing growth profile (`growth/profile.md`)
 - Review recent feedback (`growth/feedback/`)
 - Check progress on current roadmap (`growth/roadmap/roadmap.md`)
+- Review the **Quick Reference** section in events.md for current commitment and OKR snapshots
 - Gather any new self-assessment data
 - **No opinions until data is gathered**
 
@@ -82,8 +84,103 @@ Use this capability when:
 - Create feedback collection triggers
 - **Written commitments - verbal doesn't count**
 
+### Phase 6: Mandatory Documentation (NEVER SKIP)
+
+**This phase is NON-NEGOTIABLE. Every growth advisor session MUST end with documentation updates.**
+
+After EVERY growth advisor interaction - whether a full coaching session, a quick accountability check, or a user sharing a progress update - you MUST:
+
+#### 6a. Log Event in `growth/events.md`
+
+Add a new entry at the TOP of the `## Events` section (reverse chronological order) using this format:
+
+```markdown
+### [YYYY-MM-DD] [Session Type]: [Brief Title]
+
+**Session Type**: [Coaching / Review / Assessment / Planning / Accountability / Reflection / Update]
+**Trigger**: [What prompted this session - user request, scheduled review, missed deadline, etc.]
+**Context**: [Current situation - what's happening in career/business right now]
+
+**Discussion Summary**:
+[Key points discussed. Be specific - not "discussed outreach" but "discussed that 3 of 5 warm messages were sent, 2 got responses, 1 discovery call scheduled for Feb 14"]
+
+**Decisions Made**:
+- [Decision 1 with rationale]
+- [Decision 2 with rationale]
+
+**Commitment Updates**:
+| Commitment | Previous Status | New Status | Notes |
+|------------|----------------|------------|-------|
+| [commitment] | [old status] | [new status] | [what changed and why] |
+
+**Roadmap Impact**:
+- [What was updated in roadmap.md]
+- [Milestone status changes]
+- [KR progress updates]
+- [New actions added or removed]
+
+**Key Insights**:
+- [Insight 1 - things learned, patterns identified, blind spots revealed]
+
+**Action Items Created**:
+- [ ] [Action] - Due: [Date]
+
+**Next Session Focus**:
+[What should be discussed next time - specific, not vague]
+
+---
+```
+
+#### 6b. Update Quick Reference in `growth/events.md`
+
+Update the **Active Commitments Snapshot** and **OKR Progress Snapshot** tables at the top of events.md to reflect current state. These snapshots are the first thing loaded in Phase 1 - they must be accurate.
+
+**Commitment status values**: `Open` | `In Progress` | `Met` | `Missed` | `Revised`
+
+#### 6c. Update `growth/roadmap/roadmap.md`
+
+Update the roadmap when ANY of the following changed during the session:
+- **OKR Key Results**: Update `Current` column and `Status` (On Track / At Risk / Behind)
+- **Milestone statuses**: Update from Not Started → In Progress → Complete / Missed
+- **Commitment statuses**: Update the Commitments table
+- **Weekly Action Tracker**: Check off completed items, add new ones
+- **Document History**: Add a row noting what changed and when
+- **70-20-10 Balance**: Update actual percentages if discussed
+
+#### 6d. Update `growth/profile.md` (When Applicable)
+
+Update the profile when:
+- New strengths are demonstrated or evidenced
+- Weaknesses are addressed or new ones identified
+- Skill levels change (with evidence)
+- Avoidance patterns are identified or resolved
+- Blind spots are revealed
+
+#### 6e. Confirm Updates to User
+
+After documenting, report what was updated:
+
+```
+Updated growth documentation:
+- events.md: Logged [session type] session for [date]
+- events.md: Updated commitment snapshot ([X] commitments changed)
+- events.md: Updated OKR snapshot ([specific changes])
+- roadmap.md: Updated [KR/milestone/commitment] statuses
+- profile.md: [Updated X section] (if applicable)
+```
+
+#### Documentation Anti-Patterns (NEVER DO)
+
+- **NEVER** end a growth session without logging to events.md
+- **NEVER** discuss progress without updating the roadmap numbers
+- **NEVER** leave the Quick Reference snapshots stale after a session
+- **NEVER** say "I'll update the docs" - update them NOW, in this session
+- **NEVER** log vague entries like "discussed growth" - be specific with numbers and outcomes
+- **NEVER** skip updating commitment statuses when deadlines have passed
+
 ## Inputs Required
 
+- **Events Log**: `growth/events.md` - **LOAD FIRST** for session history, commitment snapshots, and OKR progress
 - **Current Context**: What triggered this session? Recent events, feedback, concerns
 - **Growth Files**: Profile, roadmap, feedback, assessments from `/growth/`
 - **Specific Focus** (optional): Particular area to dive deep on
@@ -399,11 +496,50 @@ Before delivering any assessment, ask: "If I were paying $500/hour for this grow
 ## Integration
 
 ### With Growth Folder
-- All outputs saved to appropriate files in `growth/`
-- Profile updated after each assessment session
-- Roadmap reviewed and updated quarterly
-- Feedback captured as it comes in
-- Retrospectives done quarterly
+- **`growth/events.md`** - Session log and current state snapshots. **Read first, update last. Every session.**
+- **`growth/roadmap/roadmap.md`** - OKRs, milestones, commitments. **Update whenever numbers change.**
+- **`growth/profile.md`** - Skills, strengths, weaknesses. **Update when assessments change.**
+- **`growth/content-ideas.md`** - Content writing ideas backlog with narrative angles and ICP prioritization. **Update when new content ideas are captured or status changes.** See [Content Ideas Workflow](#content-ideas-workflow) below.
+- **`growth/feedback/`** - External feedback entries. **Update when feedback is received.**
+- **`growth/assessments/`** - Skill matrices and evaluations. **Update quarterly.**
+- **`growth/retrospectives/`** - Quarterly retrospectives. **Create quarterly.**
+
+### Content Ideas Workflow
+
+When a new content idea is captured during any growth session, the Growth Advisor MUST:
+
+1. **Log the idea** in `growth/content-ideas.md` using the entry template documented in that file
+2. **Generate a narrative angle** by invoking the `strategic-storyteller` capability:
+   - Apply the WHAT -> SO WHAT -> NOW WHAT framework (Matt Abrahams)
+   - Identify the Five-Act narrative hook (Andy Raskin) - what's the "shift" for the reader?
+   - Write a 2-3 sentence narrative summary that positions the audience (ICP) as the hero
+3. **Score for ICP value** by invoking the `prioritization-analyst` capability:
+   - Use Content RICE scoring (adapted for content, not product features):
+     - **Reach** (1-5): How many people in the ICP will care about this topic?
+     - **Impact** (0.25-3): How much does this build trust/authority with buyers?
+     - **Confidence** (50%-100%): How well can I write this with real experience/data?
+     - **Effort** (1-5 hours): How long to write a quality post?
+   - **Content RICE Score** = (Reach x Impact x Confidence) / Effort
+   - Document the reasoning for each dimension score
+   - Re-rank all ideas in the Priority Rankings table by score
+4. **Update the Priority Rankings** table at the top of content-ideas.md
+
+**ICP Context for Content Scoring**:
+- **Primary ICP**: Founders of B2B SaaS/tech companies who don't have a product function
+- **What they care about**: Making better product decisions, stopping firefighting, building teams, growing revenue, not wasting dev cycles
+- **What they DON'T care about**: PM theory, frameworks for their own sake, AI hype, consultant war stories
+- **Content goal**: Demonstrate understanding of their pain AND expertise to fix it. Drive inbound inquiries.
+
+5. **Before publishing**, the content MUST pass through:
+   - **`humanizer` skill** - Remove AI writing patterns (em dashes, rule of three, AI vocabulary, inflated language). Content should read like a human wrote it, not an AI.
+   - **Image attachment** - Every post requires an image. For reference article posts, use the lead image from the referenced article. See `growth/content-ideas.md` for image requirements by post type.
+
+**Anti-patterns**:
+- NEVER log a content idea without a narrative angle and RICE score
+- NEVER score content based on what's interesting to PM peers - score for BUYER relevance
+- NEVER let content ideas live in roadmap.md or other files - they belong in content-ideas.md
+- NEVER publish content without running it through the humanizer skill first
+- NEVER publish a post without an image attached
 
 ### With Customer Documentation
 - Can pull insights from customer event-logs for feedback
@@ -449,8 +585,11 @@ Before delivering any assessment, ask: "If I were paying $500/hour for this grow
 
 ## Triggering Reviews
 
-- **Weekly**: 5-minute KR check
-- **Monthly**: 30-minute roadmap review
-- **Quarterly**: Full retrospective + next quarter planning
-- **After significant feedback**: Process and integrate
-- **After failures**: Analyze, don't rationalize
+- **Weekly**: 5-minute KR check → update events.md + roadmap KR numbers
+- **Monthly**: 30-minute roadmap review → update events.md + roadmap + profile if needed
+- **Quarterly**: Full retrospective + next quarter planning → update all growth files
+- **After significant feedback**: Process and integrate → update events.md + feedback/ + profile
+- **After failures**: Analyze, don't rationalize → update events.md + roadmap commitments
+- **Any user update**: Even casual "I sent those messages" → update events.md + roadmap
+
+**CRITICAL**: Every trigger type above ends with documentation updates (Phase 6). No exceptions.
